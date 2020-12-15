@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   resources :dreams
   resources :users
   resources :themes
+  # resources :themes do 
+  #   resources :dreams, only: [:new, :index]
+  
 end

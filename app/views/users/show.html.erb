@@ -1,0 +1,5 @@
+<%= @user.username %><br>
+<% @user.dreams.each do |dream| %>
+<% @user_theme = @user.themes.find(dream.theme_id) %>
+<%= link_to @user_theme.name, theme_path(@user_patient) %> - <%= link_to dream, dream_path(dream) %>
+<% end %>
