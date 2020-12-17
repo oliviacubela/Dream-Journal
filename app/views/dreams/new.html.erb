@@ -1,12 +1,13 @@
-<h2>Dreams 'new' route</h2><br>
-<h2>Create a new dream</h2><br>
+<h2>Create a New Dream!</h2><br>
 
-<%= form_tag dreams_path do %>
-  <label>Dream title:</label><br>
-  <%= text_field_tag :'dream[title]' %><br>
- 
-  <label>Content description:</label><br>
-  <%= text_area_tag :'dream[content]' %><br>
- 
-  <%= submit_tag "Submit" %>
+
+<%= form_for (@dream) do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label :content %><br>
+  <%= f.text_area :content %><br>
+  <%= f.submit %>
 <% end %>
+
+
+
