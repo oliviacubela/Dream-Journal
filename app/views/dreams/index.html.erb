@@ -1,2 +1,5 @@
 <h2>Successfully made it to the "Dreams/index" page</h2>
-<p>Make sure this works, after re-routing</p>
+
+<% @dreams.each do |dream| %>
+  <div><%= link_to dream.title, dreams_path(dream) %></div>
+<% end %>
