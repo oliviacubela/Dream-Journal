@@ -1,21 +1,21 @@
 class DreamsController < ApplicationController
 
   def show
-    # @dream = Dream.find(params[:id])
+    @dream = Dream.find(params[:id])
   end
 
   def index 
-    # @dreams = Dream.all 
+    @dreams = Dream.all 
   end
 
   def new 
-    # @dream = Dream.new 
+    @dream = Dream.new 
   end
 
   def create 
     @dream = Dream.new(dream_params) 
     if @dream.save
-      redirect_to dreams_path
+      redirect_to dreams_path(@dream)
     else
       render 'new'
     end
