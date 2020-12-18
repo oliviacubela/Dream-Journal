@@ -30,7 +30,7 @@ class DreamsController < ApplicationController
   private 
 
   def dream_params
-    params.require(:dream).permit(:title, :content, :id)
+    params.require(:dream).permit(:title, :content, :theme_id, :user_id)
   end
 
 end
