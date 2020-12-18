@@ -3,3 +3,11 @@
 <% @user_theme = @user.themes.find(dream.theme_id) %>
 <%= link_to @user_theme.name, theme_path(@user_patient) %> - <%= link_to dream, dream_path(dream) %>
 <% end %>
+
+<h1><%#= @song.name %></h1>
+
+<%#= (link_to @song.artist.name, artist_path(@song.artist)) if @song.artist %>
+
+<h1><%#= @dream.name %></h1>
+
+<%#= (link_to @dream.theme.name, theme_path(@song.artist)) if @song.artist %>
