@@ -1,15 +1,11 @@
 class DreamsController < ApplicationController
 
-  def show
-    @dream = Dream.find(params[:id])
-  end
-
-  def index 
-    @dreams = Dream.all 
-  end
+  # def index 
+  #   @dreams = Dream.all 
+  # end
 
   def new 
-    @dream = Dream.new 
+    @dream = Dream.new
   end
 
   def create 
@@ -21,11 +17,15 @@ class DreamsController < ApplicationController
     end
   end
 
-  def update
+  def show
     @dream = Dream.find(params[:id])
-    @dream.update(dream_params)
-    redirect_to dreams_path(@dream)
   end
+
+  # def update
+  #   @dream = Dream.find(params[:id])
+  #   @dream.update(dream_params)
+  #   redirect_to dreams_path(dream)
+  # end
 
   private 
 
