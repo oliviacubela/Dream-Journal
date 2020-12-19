@@ -1,8 +1,8 @@
 class DreamsController < ApplicationController
 
-  # def index 
-  #   @dreams = Dream.all 
-  # end
+  def index 
+    @dreams = Dream.all 
+  end
 
   def new 
     @dream = Dream.new
@@ -13,7 +13,7 @@ class DreamsController < ApplicationController
     if @dream.save
       redirect_to dreams_path(@dream)
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -30,7 +30,7 @@ class DreamsController < ApplicationController
   private 
 
   def dream_params
-    params.require(:dream).permit(:title, :content, :theme_id, :user_id)
+    params.require(:dream).permit(:title, :content, :theme_id, :theme_name, :user_id)
   end
 
 end
