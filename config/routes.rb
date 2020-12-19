@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :users
   resources :themes
   resources :themes do
-    resources :dreams, only: [:new, :index]
+    resources :dreams, only: [:new, :index, :show]
   end
 end
