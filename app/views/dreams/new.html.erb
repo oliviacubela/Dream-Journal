@@ -1,13 +1,16 @@
-<h2>Create a New Dream!</h2><br>
 
 
-<%= form_for (@dream) do |f| %>
-  <%= f.label :title %><br>
+<h1>Create a New Dream</h1>
+
+<%= form_for @dream  do |f| %>
+  <%= f.label :title %>
   <%= f.text_field :title %><br>
   <%= f.label :content %><br>
   <%= f.text_area :content %><br>
+  <%= f.label :theme_name %>
+  <%= f.text_field :theme_name %>
+  <br />
+
   <%= f.submit %>
 <% end %>
-
-
 
