@@ -1,0 +1,13 @@
+<h1>Editing <%= @dream.title %></h1>
+
+<%= form_for @dream  do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.label :content %>
+  <%= f.text_area :content %><br>
+  <%= f.label :theme_name %>
+  <%= f.text_field :theme_name %><br>
+  <br />
+
+  <%= f.submit %>
+<% end %>

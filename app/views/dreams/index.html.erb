@@ -1,5 +1,10 @@
 <h2>Successfully made it to the "Dreams/index" page</h2>
 
+
+<ul>
 <% @dreams.each do |dream| %>
-  <div><%= link_to dream.title, dreams_path(dream) %></div>
+  <li><%= display_theme(dream) %> - <%= link_to dream.title, dream_path(dream) %></li>
 <% end %>
+</ul>
+<br>
+<%= link_to "Add New Dream", new_dream_path %>

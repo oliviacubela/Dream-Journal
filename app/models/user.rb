@@ -2,5 +2,7 @@ class User < ActiveRecord::Base
   has_many :dreams 
   has_many :themes, through: :dreams
 
-  validates :email, uniqueness: true
+  has_secure_password
+
+  # validates :email, uniqueness: true
 end
