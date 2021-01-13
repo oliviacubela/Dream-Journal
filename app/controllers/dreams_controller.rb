@@ -7,14 +7,17 @@ class DreamsController < ApplicationController
   def new 
     @dream = Dream.new
     @theme = @dream.build_theme
+    # binding.pry
   end
 
   def create 
-    binding.pry
-    @dream = Dream.new(dream_params) 
+    # binding.pry
+    @dream = current_user.dreams.build(dream_params)  #create current user method first,
     if @dream.save
+      binding.pry
       redirect_to dreams_path(@dream)
     else
+      binding.pry
       render :new
     end
   end
@@ -32,7 +35,7 @@ class DreamsController < ApplicationController
   private 
 
   def dream_params
-    params.require(:dream).permit(:title, :content, :user_id, themes_attributes:[:name])
+    params.require(:dream).permit(:title, :content, :user_id, theme_attributes:[:name])
   end
 
 end

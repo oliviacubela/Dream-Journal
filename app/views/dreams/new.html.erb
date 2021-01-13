@@ -5,10 +5,11 @@
 <%= form_for @dream  do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %><br>
-  <%= f.label :content %><br>
+  <%= f.label :content %>
   <%= f.text_area :content %><br>
-  <%= f.fields_for @theme do |t| %>
-  <%= t.text_field :name %>
+  <%= f.fields_for :theme do |t| %>
+  <%= t.label :name %>
+  <%= t.text_field :name %><br>
   <% end %>
   <br />
 
